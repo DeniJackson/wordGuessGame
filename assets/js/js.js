@@ -45,7 +45,7 @@ for(i=0; i < pickedWord.length; i++){
 document.onkeyup = function(event){
 showWord = displayWord.textContent; //Trying to update the text content to show letters correctly.
     
-    
+
     if (tries > 0){
         
         displayTries.textContent = 'Tries: ' +  tries; //shows number of tries left on page
@@ -59,8 +59,8 @@ showWord = displayWord.textContent; //Trying to update the text content to show 
         usedLettersArray.push(userguess);
         usedLetters.innerHTML = "Used Letters: " + usedLettersArray.toString(); 
         //This waits until the user has pressed an unused key before decreasing the amount of tries.
+        
         tries--;
-
         //Loops through all the letters in the random word to check if they match the user's guess
         for (i = 0; i < pickedWord.length; i++){
             
@@ -75,6 +75,7 @@ showWord = displayWord.textContent; //Trying to update the text content to show 
                          displayCorrectWord.innerHTML = "The correct word is " + pickedWord + ".";
                         message.innerHTML = "You win! Now try again.";
                         wins+=1;
+                        reset();
                        
                     }
             }
@@ -89,6 +90,7 @@ showWord = displayWord.textContent; //Trying to update the text content to show 
         displayCorrectWord.innerHTML = "The correct word was " + pickedWord + ".";
         message.innerHTML = "You lose";
         losses+=1;
+        reset();
         
 
 }
